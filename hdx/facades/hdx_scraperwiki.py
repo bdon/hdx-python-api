@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 setup_logging(**logging_kwargs)
 
 
-def facade(projectmainfn: Callable[[None], None], **kwargs) -> bool:
+def facade(projectmainfn, **kwargs):
     """Facade that handles ScraperWiki and calls project main function
 
     Args:
