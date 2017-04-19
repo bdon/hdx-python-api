@@ -268,7 +268,7 @@ class HDXObject(dict_class, object):
                                                           requests_kwargs={
                                                               'auth': Configuration.read()._get_credentials()})
         except Exception as e:
-            six.raise_from(HDXError('Failed when trying to %s %s! (POST): %s' % (action, self.data[id_field_name],e)),e)
+            six.raise_from(HDXError('Failed when trying to %s %s! (POST): %s' % (action, self.data[id_field_name], str(e.__str__()))), e)
         finally:
             if file_to_upload and file:
                 file.close()

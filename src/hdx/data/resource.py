@@ -318,7 +318,7 @@ class Resource(HDXObject):
                 logger.debug('Uploading: %s' % offset)
                 offset += chunksize
         except Exception as e:
-            six.raise_from(HDXError('Upload to datastore of %s failed! %s' % (url,e)),e)
+            six.raise_from(HDXError('Upload to datastore of %s failed! %s' % (url, str(e.__str__()))), e)
         finally:
             if stream:
                 stream.close()
